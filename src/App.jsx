@@ -1,10 +1,13 @@
-import QuizzBar from "./components/questionBar";
+import QuizzBar from "./components/QuizzBar";
+import ModalProvider from "./ModalContext";
 
 function App() {
   return (
-    <>
-      <QuizzBar />
-    </>
+    <div className="App">
+      <ModalProvider>
+        <QuizzBar />
+      </ModalProvider>
+    </div>
   );
 }
 
