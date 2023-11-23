@@ -1,9 +1,11 @@
-function App () {
+import QuizzBar from "./components/questionBar";
 
-
-  return(
-    <></>
-  )
+function App() {
+  return (
+    <>
+      <QuizzBar />
+    </>
+  );
 }
 
 export default App;
