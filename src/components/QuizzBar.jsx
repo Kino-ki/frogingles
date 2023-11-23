@@ -1,4 +1,5 @@
-import questions from "../questions.json"
+import Popup from "reactjs-popup";
+import questions from "../questions.json";
 import { useModal } from "../ModalContext";
 
 function QuizzBar() {
@@ -10,22 +11,15 @@ function QuizzBar() {
     setIsModalOpen(true);
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
   return (
     <div>
-      {questions.map((q, index) => (
-        <button key={index} onClick={() => handleClick(q)}>
-          bouton {index + 1}
-        </button>
+      {questions.map((q, id) => (
+        <Popup key={q.id} trigger={<button>bouton {id + 1}</button>}>
+          <div>{q.question}</div>
+          <div>{q.choix}</div>
+          <button onClick={() => handleClick(q)}></button>
+        </Popup>
       ))}
-      {isModalOpen && (
-        <div>
-          <button onClick={handleCloseModal}>Fermer</button>
-        </div>
-      )}
     </div>
   );
 }

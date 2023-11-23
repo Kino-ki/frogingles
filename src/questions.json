@@ -1,10 +1,12 @@
 [
   {
+    "id": 1,
     "question": "Quel renne est célèbre pour avoir un nez rouge ?",
     "choix": ["Dasher", "Prancer", "Rudolph", "Blitzen"],
     "reponse": "Rudolph"
   },
   {
+    "id": 2,
     "question": "Quel est le travail principal des lutins du Père Noël à l'atelier du Pôle Nord ?",
     "choix": [
       "Cuisiner des biscuits",
@@ -15,6 +17,7 @@
     "reponse": "Emballer des cadeaux"
   },
   {
+    "id": 3,
     "question": "Quelle fête est traditionnellement associée à l'échange de cadeaux pendant la période de Noël ?",
     "choix": ["Hanoucca", "Halloween", "Noël", "Jour de l'An"],
     "reponse": "Noël"
