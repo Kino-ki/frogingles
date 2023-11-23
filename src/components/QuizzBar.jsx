@@ -14,15 +14,37 @@ function QuizzBar({quizz, id, choix, question, reponse}  ) {
     setCount(count+1)
 
   }
+  
+
+ quizz.forEach((element) => console.info(element.question))
 
   return (
-      quizz.map((q)=>(
-    <div key={q.id}  className="flex flex-col">
-      <Popup trigger= {<button onClick= {handleClick} > BOUTON </button>} >
+    <div>
+            <Popup trigger= {<button onClick= {handleClick} >BOUTONS </button> } >
         {close => (
           <div>
             <PopUp/>
-            <a title="clase" onClick={close}>
+            <a className="bg-black" title="clase" onClick={close}>
+              close
+            </a>
+          </div>
+        )}
+      </Popup >
+      <Popup trigger= {<button onClick= {handleClick} >BOUTONS </button> } >
+        {close => (
+          <div>
+            <PopUp/>
+            <a className="bg-black" title="clase" onClick={close}>
+              close
+            </a>
+          </div>
+        )}
+      </Popup >
+      <Popup trigger= {<button onClick= {handleClick} >BOUTONS </button> } >
+        {close => (
+          <div>
+            <PopUp/>
+            <a className="bg-black" title="clase" onClick={close}>
               close
             </a>
           </div>
@@ -31,34 +53,7 @@ function QuizzBar({quizz, id, choix, question, reponse}  ) {
 
     </div>
 
-      ) )
-  )
+
+  );
 }
-
 export default QuizzBar;
-
-  // const { isModalOpen, setIsModalOpen, currentQuestion, setCurrentQuestion } =
-  //   useModal();
-
-  // const handleClick = (data) => {
-  //   setCurrentQuestion(data);
-  //   setIsModalOpen(true);
-  // };
-
-  // const handleCloseModal = () => {
-  //   setIsModalOpen(false);
-  // };
-
-  // return (
-  //   <div>
-  //     {questions.map((q, index) => (
-  //       <button key={index} onClick={() => handleClick(q)}>
-  //         bouton {index + 1}
-  //       </button>
-  //     ))}
-  //     {isModalOpen && (
-  //       <div>
-  //         <PopUp/>
-  //       </div>
-  //     )}
-  //   </div>

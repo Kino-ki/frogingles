@@ -1,5 +1,6 @@
 import QuizzBar from "./components/QuizzBar";
 import ModalProvider from "./ModalContext";
+import PropTypes from "prop-types"
 
 const quizz = [
   {
@@ -33,7 +34,11 @@ function App() {
     <div title="App">
     <div className="">
       <ModalProvider>
-        <QuizzBar quizz={quizz} id={quizz.id} question={quizz.question} choix={quizz.choix} reponse={quizz.reponse} />
+        <QuizzBar quizz={quizz} 
+        id={quizz.id} 
+        question={quizz.question} 
+        choix={quizz.choix} 
+        reponse={quizz.reponse} />
       </ModalProvider>
     </div>
 
@@ -41,4 +46,13 @@ function App() {
   );
 }
 
+// QuizzBar.propTypes = {
+
+//   quizz:PropTypes.array({
+//     id:PropTypes.string.isRequired,
+//     question:PropTypes.string.isRequired,
+//     choix:PropTypes.string.isRequired,
+//     reponse:PropTypes.string.isRequired,
+//   }).isRequired
+// }
 export default App;
