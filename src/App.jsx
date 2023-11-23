@@ -1,6 +1,6 @@
 import QuizzBar from "./components/QuizzBar";
 import ModalProvider from "./ModalContext";
-import PropTypes from "prop-types";
+
 
 const quizz = [
   {
@@ -35,22 +35,11 @@ const quizz = [
 
 function App() {
   return (
-    <div className="min-h-screen w-full bg-[url('./assets/mapfond1.png')] bg-no-repeat bg-cover bg-center">
-      <div>
-        <ModalProvider>
-          <QuizzBar
-            quizz={quizz}
-            id={quizz.id}
-            image={quizz.image}
-            question={quizz.question}
-            choix={quizz.choix}
-            reponse={quizz.reponse}
-          />
-        </ModalProvider>
-      </div>
+
     </div>
   );
 }
+
 
 QuizzBar.propTypes = {
   quizz: PropTypes.array.isRequired,
@@ -60,5 +49,6 @@ QuizzBar.propTypes = {
   choix: PropTypes.string.isRequired,
   reponse: PropTypes.string.isRequired,
 };
+
 
 export default App;
