@@ -46,6 +46,9 @@ function App() {
             choix={quizz.choix}
             reponse={quizz.reponse}
           />
+          <div>
+            <p>gdqug</p>
+          </div>
         </ModalProvider>
       </div>
     </div>
