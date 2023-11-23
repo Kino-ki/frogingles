@@ -28,7 +28,6 @@ function QuizzBar({ question }) {
               <img src={rodo} alt="icon" />
               {question}
             </button>
-
             <button
               className="icon"
               type="button"
