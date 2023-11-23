@@ -1,5 +1,6 @@
 import QuizzBar from "./components/QuizzBar";
 import ModalProvider from "./ModalContext";
+import PropTypes from "prop-types";
 
 const quizz = [
   {
