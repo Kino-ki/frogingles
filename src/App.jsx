@@ -2,9 +2,11 @@ import QuizzBar from "./components/questionBar";
 
 function App() {
   return (
-    <>
-      <QuizzBar />
-    </>
+    <div>
+      <div className="flex flex-row justify-center align-middle mt-36">
+      <QuizzBar/>
+      </div>
+    </div>
   );
 }
 

@@ -1,16 +1,16 @@
 function QuizzBar() {
   return (
-    <div className="bg-red-800 flex justify-evenly flex-col space-y-4 absolute inset-y-0 right-0 w-16">
-      <img></img>
-      <h1 className="">Frogingle</h1>
-      <h2></h2>
-      <ul>
-        <li>reponse A</li>
-        <li>reponse B</li>
-        <li>reponse C</li>
-        <li>reponse D</li>
-      </ul>
-    </div>
+    <div title="contenant" className="bg-red-800 flex flex-col w-96 h-96 rounded-3xl shadow-lg border-2 border-lime-900 text-white">
+      <div title="contenu" className="flex flex-col justify-center gap-20 m-10 mt-18">
+        <h2 title="question" className="font-bold text-3xl text-center ">Question</h2>
+        <div title="Réponses" className="grid grid-cols-2 gap-10 place-content-stretch text-xl"> 
+          <h3 className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3">Réponse 1</h3>
+          <h3 className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3">Réponse 2</h3>
+          <h3 className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3">Réponse 3</h3>
+          <h3 className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3">Réponse 4</h3>
+        </div>
+      </div>
+      </div>
   );
 }
 
