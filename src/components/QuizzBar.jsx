@@ -20,11 +20,10 @@ function QuizzBar({ question }) {
         trigger={
           <div>
             <button
-              className="icon"
               type="button"
               onClick={() => handleClick()}
             >
-              <img src={rodo} alt="icon" />
+              <img className="p-5" src={rodo} alt="icon" />
               {question}
             </button>
             <button
