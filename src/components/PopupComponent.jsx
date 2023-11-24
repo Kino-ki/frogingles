@@ -5,14 +5,14 @@ function PopupComponent({ quizz }) {
   return (
     <div
       title="contenant"
-      className="bg-red-800 flex flex-col w-96 h-96 rounded-3xl shadow-lg border-2 border-lime-900 text-white"
+      className="bg-red-800 flex flex-col w-5/12 rounded-3xl shadow-lg border-2 border-lime-900 text-white"
     >
       <div
         key={quizz.id}
         title="contenu"
-        className="flex flex-col justify-center gap-20 m-10 mt-18"
+        className="flex flex-col justify-center gap-20 m-10 mt-18 "
       >
-        <h2 title="question" className="font-bold text-3xl text-center ">
+        <h2 title="question" className="font-bold text-3xl text-center flex-wrap ">
           {quizz.question}
         </h2>
         <div

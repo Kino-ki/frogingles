@@ -4,6 +4,8 @@ import QuizzBar from "./components/QuizzBar";
 import rodo from "./assets/Rodolf1.png";
 import lutin from "./assets/Lutins1.png";
 import gift from "./assets/gift1.png";
+import logo from "./assets/frogingles3.jpg";
+import gif from "./assets/it's-time-mariah-carey-mariah-carey-unlocked.gif"
 
 const quizz = [
   {
@@ -58,10 +60,11 @@ function App() {
 
   return (
     <div className="min-h-screen w-full bg-[url('./assets/mapfond1.png')] bg-no-repeat bg-cover bg-center">
+      <img src={logo} alt="logo" className="rounded-full" />
       <div>
         <div>
           <>
-            <button className="rodo" type="button">
+            <button className="rodo translate-x-88 translate-y-ry" type="button">
               <img
                 src={rodo}
                 alt="icon"
@@ -70,8 +73,9 @@ function App() {
                 }}
               ></img>
             </button>
+            <img src= {gif}  alt="gif" className="translate-x-gx translate-y-32 h-96 rounded-full shadow-2xl " />
 
-            <button className="lutin" type="button">
+            <button className="translate-x-80 -translate-y-96" type="button">
               <img
                 src={lutin}
                 alt="icon"
@@ -81,7 +85,7 @@ function App() {
               />
             </button>
 
-            <button className="gift" type="button">
+            <button className="translate-y-20 translate-x-cx" type="button">
               <img
                 src={gift}
                 alt="icon"

@@ -5,7 +5,16 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      translate: {
+        '88': '89rem',
+        'cy': '40rem',
+        'cx' : '45rem',
+        'gx' : '37rem',
+        'gh' : '35rem',
+        'ry' : '22rem',
+       }
+    },
   },
   plugins: [],
 }
