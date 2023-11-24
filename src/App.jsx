@@ -58,38 +58,37 @@ function App() {
     <div className="min-h-screen w-full bg-[url('./assets/mapfond1.png')] bg-no-repeat bg-cover bg-center">
       <div>
         <div>
-          {
-            <>
-              <button
-                className="icon"
-                type="button"
+          <>
+            <button className="rodo" type="button">
+              <img
+                src={rodo}
+                alt="icon"
                 onClick={() => {
                   handleClick(1);
                 }}
-              >
-                <img src={rodo} alt="icon" />
-              </button>
+              ></img>
+            </button>
 
-              <button
-                className="icon"
-                type="button"
+            <button className="lutin" type="button">
+              <img
+                src={lutin}
+                alt="icon"
                 onClick={() => {
                   handleClick(2);
                 }}
-              >
-                <img src={lutin} alt="icon" />
-              </button>
-              <button
-                className="icon"
-                type="button"
+              />
+            </button>
+
+            <button className="gift" type="button">
+              <img
+                src={gift}
+                alt="icon"
                 onClick={() => {
                   handleClick(3);
                 }}
-              >
-                <img src={gift} alt="icon" />
-              </button>
-            </>
-          }
+              />
+            </button>
+          </>
         </div>
         <ModalProvider>
           <QuizzBar quizz={quizz} filteredQuizz={filteredQuizz} />
