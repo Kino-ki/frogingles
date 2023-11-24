@@ -1,6 +1,16 @@
 // import PropTypes from "prop-types";
+import { useState } from "react";
+import MC from "../assets/MC.png";
 
-function PopupComponent({ quizz }) {
+function PopupComponent({ quizz, reponse }) {
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+
+  const handleAnswerClick = (answer) => {
+    const isCorrect = answer === quizz.reponse;
+    setSelectedAnswer({ answer, isCorrect });
+  };
+
+
   console.log(quizz);
   return (
     <div
@@ -21,16 +31,28 @@ function PopupComponent({ quizz }) {
           className="grid grid-cols-2 gap-10 place-content-stretch text-xl"
         >
           {quizz.choix.map((q) => (
-            <>
-              <h3
-                key={q.id}
-                className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3"
-              >
-                {q}
-              </h3>
-            </>
+            <h3
+              key={q.id}
+              className={`hover:bg-green-800 text-center text-2xl rounded-xl py-3 ${
+                selectedAnswer && q === quizz.reponse
+                  ? "bg-blue-500"
+                  : selectedAnswer && q === selectedAnswer.answer
+                  ? "bg-black" 
+                  : ""
+              }`}
+              onClick={() => handleAnswerClick(q)}
+            >
+              {q}
+            </h3>
           ))}
         </div>
+        {selectedAnswer && !selectedAnswer.isCorrect && (
+          <img
+            src={MC}
+            alt="Wrong Answer"
+            className="mt-4 mx-auto"
+          />
+        )}
       </div>
     </div>
   );
