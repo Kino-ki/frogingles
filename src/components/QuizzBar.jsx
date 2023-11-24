@@ -1,23 +1,13 @@
 import Popup from "reactjs-popup";
 import PopUpComponent from "./PopupComponent";
 
-function QuizzBar({ quizz }) {
+function QuizzBar({ filteredQuizz }) {
 
   return (
     <div className="flex flex-col">
       <Popup
-        trigger={
-          
-        }
-      >
-        {(close) => (
-          <div>
+        trigger={filteredQuizz}>
             {filteredQuizz && <PopUpComponent quizz={filteredQuizz} />}
-            <a title="clase" onClick={close}>
-              close
-            </a>
-          </div>
-        )}
       </Popup>
     </div>
   );

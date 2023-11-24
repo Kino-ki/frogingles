@@ -7,6 +7,7 @@ import Maria from "./components/Maria";
 import rodo from "./assets/Rodolf.png";
 import lutin from "./assets/Lutins.png";
 import gift from "./assets/gift.png";
+import PopupComponent from "./components/PopupComponent";
 
 const quizz = [
   {
@@ -61,29 +62,30 @@ function App() {
           {
             <>
               <button
-                className="icon"
+                className=""
                 type="button"
                 onClick={() => {
                   handleClick(1);
-                }}
-              >
+                  console.log("fgvhbnjk,l")
+                }}>
                 <img src={rodo} alt="icon" />
-              </button>
+                </button>
 
               <button
-                className="icon"
-                type="button"
                 onClick={() => {
-                  handleClick(2);
+                  handleClick(2)
+                  console.log("fgvhbnjk,l");
                 }}
               >
-                <img src={lutin} alt="icon" />
+              <img src={lutin} alt="icon"/>
               </button>
               <button
                 className="icon"
                 type="button"
                 onClick={() => {
                   handleClick(3);
+                  console.log("fgvhbnjk,22")
+
                 }}
               >
                 <img src={gift} alt="icon" />
