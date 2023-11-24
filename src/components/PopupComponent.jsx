@@ -1,6 +1,7 @@
 // import PropTypes from "prop-types";
 import { useState } from "react";
-import MC from "../assets/MC.png";
+import gif from "../assets/it's-time-mariah-carey-mariah-carey-unlocked.gif";
+import musique from "../assets/all-i-want-for-christmas-is-you.mp3"
 
 function PopupComponent({ quizz, reponse }) {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -46,14 +47,17 @@ function PopupComponent({ quizz, reponse }) {
             </h3>
           ))}
         </div>
-        {selectedAnswer && !selectedAnswer.isCorrect && (
-          <img
-            src={MC}
-            alt="Wrong Answer"
-            className="mt-4 mx-auto"
-          />
-        )}
       </div>
+      {selectedAnswer && !selectedAnswer.isCorrect && (
+        <>
+        <img
+          src={gif}
+          alt="Wrong Answer"
+          className="rounded-full"
+        />
+        <audio autoPlay src={musique} />
+        </>
+        )}
     </div>
   );
 }

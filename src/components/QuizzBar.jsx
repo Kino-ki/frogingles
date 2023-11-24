@@ -9,8 +9,8 @@ function QuizzBar({ quizz }) {
       <Popup trigger={<button id="triggerbutton"></button>}>
         {(close) => (
           <div>
-            <PopUpComponent quizz={quizz} />
-            <a title="clase" onClick={close}>
+            <PopUpComponent quizz={quizz}/>
+            <a title="clase" onClick={close} >
               close
             </a>
           </div>

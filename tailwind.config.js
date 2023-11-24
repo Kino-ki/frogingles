@@ -13,6 +13,7 @@ export default {
         'gx' : '37rem',
         'gh' : '35rem',
         'ry' : '22rem',
+        'lx' : '27rem'
        }
     },
   },

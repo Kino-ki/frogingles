@@ -64,7 +64,7 @@ function App() {
       <div>
         <div>
           <>
-            <button className="rodo translate-x-88 translate-y-ry" type="button">
+            <button className="rodo translate-x-88 translate-y-64" type="button">
               <img
                 src={rodo}
                 alt="icon"
@@ -73,9 +73,9 @@ function App() {
                 }}
               ></img>
             </button>
-            <img src= {gif}  alt="gif" className="translate-x-gx translate-y-32 h-96 rounded-full shadow-2xl " />
+            {/* <img src= {gif}  alt="gif" className="translate-x-gx translate-y-32 h-96 rounded-full shadow-2xl " /> */}
 
-            <button className="translate-x-80 -translate-y-96" type="button">
+            <button className= "translate-x-lx" type="button">
               <img
                 src={lutin}
                 alt="icon"
@@ -85,7 +85,7 @@ function App() {
               />
             </button>
 
-            <button className="translate-y-20 translate-x-cx" type="button">
+            <button className="" type="button">
               <img
                 src={gift}
                 alt="icon"
