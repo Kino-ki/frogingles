@@ -1,7 +1,12 @@
+import { useState, useEffect } from "react";
 import QuizzBar from "./components/QuizzBar";
 import ModalProvider from "./ModalContext";
 import PropTypes from "prop-types";
+import Maria from "./components/Maria";
 
+import rodo from "./assets/Rodolf.png";
+import lutin from "./assets/Lutins.png";
+import gift from "./assets/gift.png";
 
 const quizz = [
   {
@@ -34,19 +39,62 @@ const quizz = [
   },
 ];
 
+//TODO  : Déplacer la logique depuis QuizzBar vers App.jsx
+//TODO  : Modifier la props "Quizz" à envoyer au composant QuizzBar
+//TODO  : Faire un map du tableau de choix dans PopupComponent
+
 function App() {
+  const [index, setIndex] = useState(null);
+  const [filteredQuizz, setFilteredQuizz] = useState(null);
+
+  const handleClick = (index) => setIndex(index);
+
+  useEffect(() => {
+    if (index) {
+      setFilteredQuizz(quizz.find((q) => q.id === index));
+    }
+  }, [index]);
   return (
-    <div className="h-screen w-full bg-[url('./assets/mapfond1.png')] bg-no-repeat bg-cover bg-center z-0">
+    <div className="min-h-screen w-full bg-[url('./assets/mapfond1.png')] bg-no-repeat bg-cover bg-center">
       <div>
+        <div>
+          {
+            <>
+              <button
+                className="icon"
+                type="button"
+                onClick={() => {
+                  handleClick(1);
+                }}
+              >
+                <img src={rodo} alt="icon" />
+              </button>
+
+              <button
+                className="icon"
+                type="button"
+                onClick={() => {
+                  handleClick(2);
+                }}
+              >
+                <img src={lutin} alt="icon" />
+              </button>
+              <button
+                className="icon"
+                type="button"
+                onClick={() => {
+                  handleClick(3);
+                }}
+              >
+                <img src={gift} alt="icon" />
+              </button>
+            </>
+          }
+        </div>
+
+        <Maria />
         <ModalProvider>
-          <QuizzBar
-            quizz={quizz}
-            id={quizz.id}
-            image={quizz.image}
-            question={quizz.question}
-            choix={quizz.choix}
-            reponse={quizz.reponse}
-          />
+          <QuizzBar quizz={quizz} filteredQuizz={filteredQuizz} />
         </ModalProvider>
       </div>
     </div>
@@ -55,7 +103,7 @@ function App() {
 
 QuizzBar.propTypes = {
   quizz: PropTypes.array.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   question: PropTypes.string.isRequired,
   choix: PropTypes.string.isRequired,
