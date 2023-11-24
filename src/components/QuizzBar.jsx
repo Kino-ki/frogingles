@@ -1,55 +1,15 @@
-import { useState } from "react";
 import Popup from "reactjs-popup";
-import PopUp from "./popup";
-import rodo from "../assets/Rodolf.png";
-import lutin from "../assets/Lutins.png";
-import gift from "../assets/gift.png";
+import PopUpComponent from "./PopupComponent";
 
 import PropTypes from "prop-types";
 
-function QuizzBar({ question }) {
-  const [count, setCount] = useState(1);
-
-  const handleClick = () => {
-    setCount(count + 1);
-  };
-
+function QuizzBar({ filteredQuizz }) {
   return (
     <div className="flex flex-col">
-      <Popup
-        trigger={
-          <div>
-            <button
-              className="icon"
-              type="button"
-              onClick={() => handleClick()}
-            >
-              <img src={rodo} alt="icon" />
-              {question}
-            </button>
-
-            <button
-              className="icon"
-              type="button"
-              onClick={() => handleClick()}
-            >
-              <img src={lutin} alt="icon" />
-              {question}
-            </button>
-            <button
-              className="icon"
-              type="button"
-              onClick={() => handleClick()}
-            >
-              <img src={gift} alt="icon" />
-              {question}
-            </button>
-          </div>
-        }
-      >
+      <Popup trigger={<button>quizz</button>}>
         {(close) => (
           <div>
-            <PopUp />
+            {filteredQuizz && <PopUpComponent quizz={filteredQuizz} />}
             <a title="clase" onClick={close}>
               close
             </a>
@@ -61,7 +21,7 @@ function QuizzBar({ question }) {
 }
 
 QuizzBar.propTypes = {
-  question: PropTypes.string.isRequired,
+  filteredQuizz: PropTypes.array.isRequired,
 };
 
 export default QuizzBar;
