@@ -1,4 +1,4 @@
-  import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 function PopupComponent({ quizz }) {
   return (
@@ -19,37 +19,34 @@ function PopupComponent({ quizz }) {
           title="Réponses"
           className="grid grid-cols-2 gap-10 place-content-stretch text-xl"
         >
-          <>
-            <h3
-              // key={e.id}
-              className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3"
-            >
-              {/*
-            
-              MAP SUR LE TABLEAU DE CHOIX
-
-           
-              {e.choix[0]}
-            </h3>
-            <h3
-              key={e.id}
-              className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3"
-            >
-              {e.choix[1]}
-            </h3>
-            <h3
-              key={e.id}
-              className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3"
-            >
-              {e.choix[2]}
-            </h3>
-            <h3
-              key={e.id}
-              className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3"
-            >
-              {e.choix[3]} */}
-            </h3>
-          </>
+          {quizz.map((q) => (
+            <>
+              <h3
+                key={q.id}
+                className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3"
+              >
+                {q.choix[0]}
+              </h3>
+              <h3
+                key={q.id}
+                className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3"
+              >
+                {q.choix[1]}
+              </h3>
+              <h3
+                key={q.id}
+                className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3"
+              >
+                {q.choix[2]}
+              </h3>
+              <h3
+                key={q.id}
+                className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3"
+              >
+                {q.choix[3]}
+              </h3>
+            </>
+          ))}
         </div>
       </div>
     </div>
@@ -57,7 +54,7 @@ function PopupComponent({ quizz }) {
 }
 
 PopupComponent.propTypes = {
-  quizz: PropTypes.string.isRequired,
+  quizz: PropTypes.array.isRequired,
 };
 
 export default PopupComponent;

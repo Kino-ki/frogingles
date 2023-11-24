@@ -2,12 +2,10 @@ import { useState, useEffect } from "react";
 import QuizzBar from "./components/QuizzBar";
 import ModalProvider from "./ModalContext";
 import PropTypes from "prop-types";
-import Maria from "./components/Maria";
 
 import rodo from "./assets/Rodolf.png";
 import lutin from "./assets/Lutins.png";
 import gift from "./assets/gift.png";
-import PopupComponent from "./components/PopupComponent";
 
 const quizz = [
   {
@@ -55,46 +53,43 @@ function App() {
       setFilteredQuizz(quizz.find((q) => q.id === index));
     }
   }, [index]);
+
   return (
     <div className="min-h-screen w-full bg-[url('./assets/mapfond1.png')] bg-no-repeat bg-cover bg-center">
       <div>
         <div>
-          {
-            <>
-              <button
-                className=""
-                type="button"
+          <>
+            <button className="rodo" type="button">
+              <img
+                src={rodo}
+                alt="icon"
                 onClick={() => {
                   handleClick(1);
-                  console.log("fgvhbnjk,l")
-                }}>
-                <img src={rodo} alt="icon" />
-                </button>
-
-              <button
-                onClick={() => {
-                  handleClick(2)
-                  console.log("fgvhbnjk,l");
                 }}
-              >
-              <img src={lutin} alt="icon"/>
-              </button>
-              <button
-                className="icon"
-                type="button"
+              ></img>
+            </button>
+
+            <button className="lutin" type="button">
+              <img
+                src={lutin}
+                alt="icon"
+                onClick={() => {
+                  handleClick(2);
+                }}
+              />
+            </button>
+
+            <button className="gift" type="button">
+              <img
+                src={gift}
+                alt="icon"
                 onClick={() => {
                   handleClick(3);
-                  console.log("fgvhbnjk,22")
-
                 }}
-              >
-                <img src={gift} alt="icon" />
-              </button>
-            </>
-          }
+              />
+            </button>
+          </>
         </div>
-
-        <Maria />
         <ModalProvider>
           <QuizzBar quizz={quizz} filteredQuizz={filteredQuizz} />
         </ModalProvider>
@@ -103,7 +98,7 @@ function App() {
   );
 }
 
-QuizzBar.propTypes = {
+App.propTypes = {
   quizz: PropTypes.array.isRequired,
   id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
