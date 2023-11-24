@@ -3,43 +3,13 @@ import PopUpComponent from "./PopupComponent";
 
 import PropTypes from "prop-types";
 
-function QuizzBar({ filteredQuizz }) {
+function QuizzBar({ quizz }) {
   return (
     <div className="flex flex-col">
-      <Popup
-        trigger={
-          <div>
-            <button
-              className="icon"
-              type="button"
-              onClick={() => handleClick()}
-            >
-              <img src={rodo} alt="icon" />
-              {question}
-            </button>
-
-            <button
-              className="icon"
-              type="button"
-              onClick={() => handleClick()}
-            >
-              <img src={lutin} alt="icon" />
-              {question}
-            </button>
-            <button
-              className="icon"
-              type="button"
-              onClick={() => handleClick()}
-            >
-              <img src={gift} alt="icon" />
-              {question}
-            </button>
-          </div>
-        }
-      >
+      <Popup trigger={<button id="triggerbutton"></button>}>
         {(close) => (
           <div>
-            <PopUp />
+            <PopUpComponent quizz={quizz} />
             <a title="clase" onClick={close}>
               close
             </a>
@@ -50,8 +20,8 @@ function QuizzBar({ filteredQuizz }) {
   );
 }
 
-QuizzBar.propTypes = {
-  filteredQuizz: PropTypes.array.isRequired,
-};
+// QuizzBar.propTypes = {
+//   quizz: PropTypes.array.isRequired,
+// };
 
 export default QuizzBar;
