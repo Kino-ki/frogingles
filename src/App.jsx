@@ -36,7 +36,7 @@ const quizz = [
 
 function App() {
   return (
-    <div className="h-screen w-full bg-[url('./assets/mapfond1.png')] bg-no-repeat bg-cover bg-center">
+    <div className="h-screen w-full bg-[url('./assets/mapfond1.png')] bg-no-repeat bg-cover bg-center z-0">
       <div>
         <ModalProvider>
           <QuizzBar

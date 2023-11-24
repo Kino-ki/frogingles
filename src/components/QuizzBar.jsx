@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Popup from "reactjs-popup";
-import PopUp from "./popup";
+import PopUpComponent from "./popup";
 import rodo from "../assets/Rodolf.png";
 import lutin from "../assets/Lutins.png";
 import gift from "../assets/gift.png";
@@ -15,48 +15,44 @@ function QuizzBar({ question }) {
   };
 
   return (
-    <div className="flex flex-col">
+    <div>
       <Popup
         trigger={
-          <div>
             <button
+              className="translate-y-96"
               type="button"
               onClick={() => handleClick()}
             >
-              <img className="p-5" src={rodo} alt="icon" />
-              {question}
-            </button>
+              <img className=" " src={rodo} alt="icon" />
+            </button>}>
+            <PopUpComponent/>;
+        </Popup>
+      <Popup
+        trigger={
             <button
-              className="icon"
+              className="translate-y-96"
               type="button"
               onClick={() => handleClick()}
             >
-              <img src={lutin} alt="icon" />
-              {question}
-            </button>
+              <img className=" " src={lutin} alt="icon" />
+            </button>}>
+            <PopUpComponent/>;
+        </Popup>
+      <Popup
+        trigger={
             <button
-              className="icon"
+              className="translate-y-96"
               type="button"
               onClick={() => handleClick()}
             >
-              <img src={gift} alt="icon" />
-              {question}
-            </button>
-          </div>
-        }
-      >
-        {(close) => (
-          <div>
-            <PopUp />
-            <a title="clase" onClick={close}>
-              close
-            </a>
-          </div>
-        )}
-      </Popup>
+              <img className=" " src={gift} alt="icon" />
+            </button>}>
+            <PopUpComponent/>;
+        </Popup>
     </div>
-  );
-}
+    )
+  }
+
 
 QuizzBar.propTypes = {
   question: PropTypes.string.isRequired,
