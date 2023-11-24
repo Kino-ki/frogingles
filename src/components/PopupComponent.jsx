@@ -1,6 +1,7 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 function PopupComponent({ quizz }) {
+  console.log(quizz);
   return (
     <div
       title="contenant"
@@ -19,31 +20,13 @@ function PopupComponent({ quizz }) {
           title="Réponses"
           className="grid grid-cols-2 gap-10 place-content-stretch text-xl"
         >
-          {quizz.map((q) => (
+          {quizz.choix.map((q) => (
             <>
               <h3
                 key={q.id}
                 className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3"
               >
-                {q.choix[0]}
-              </h3>
-              <h3
-                key={q.id}
-                className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3"
-              >
-                {q.choix[1]}
-              </h3>
-              <h3
-                key={q.id}
-                className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3"
-              >
-                {q.choix[2]}
-              </h3>
-              <h3
-                key={q.id}
-                className=" hover:bg-green-800 text-center text-2xl rounded-xl py-3"
-              >
-                {q.choix[3]}
+                {q}
               </h3>
             </>
           ))}
@@ -53,8 +36,8 @@ function PopupComponent({ quizz }) {
   );
 }
 
-PopupComponent.propTypes = {
-  quizz: PropTypes.array.isRequired,
-};
+// PopupComponent.propTypes = {
+//   quizz: PropTypes.shape.isRequired,
+// };
 
 export default PopupComponent;
